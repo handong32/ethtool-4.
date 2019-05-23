@@ -1172,24 +1172,22 @@ static int dump_coalesce(const struct ethtool_coalesce *ecoal)
 		"pkt-rate-high: %u\n"
 		"\n"
 		"rx-usecs: %u\n"
-		"rx-frames: %u\n"
-		"rx-usecs-irq: %u\n"
-		"rx-frames-irq: %u\n"
+		"DTXMXSZRQ: %u\n"
+		"WTHRESH: %u\n"
+		"HTHRESH: %u\n"
+		"PTHRESH: %u\n"
+		"BSIZEPACKET: %u\n"
+		"BSIZEHEADER: %u\n"
+		"MAXDESC: %u\n"
+		"RSCDELAY: %u\n"
 		"\n"
-		"tx-usecs: %u\n"
-		"tx-frames: %u\n"
-		"tx-usecs-irq: %u\n"
-		"tx-frames-irq: %u\n"
-		"\n"
-		"rx-usecs-low: %u\n"
-		"rx-frame-low: %u\n"
-		"tx-usecs-low: %u\n"
-		"tx-frame-low: %u\n"
-		"\n"
-		"rx-usecs-high: %u\n"
-		"rx-frame-high: %u\n"
-		"tx-usecs-high: %u\n"
-		"tx-frame-high: %u\n"
+		"na1: %u\n"
+		"na2: %u\n"
+		"na3: %u\n"
+		"na4: %u\n"
+		"na5: %u\n"
+		"na6: %u\n"
+		"na7: %u\n"
 		"\n",
 		ecoal->stats_block_coalesce_usecs,
 		ecoal->rate_sample_interval,
@@ -1924,21 +1922,21 @@ static int do_scoalesce(struct cmd_context *ctx)
 		  &ecoal.pkt_rate_high },
 		{ "rx-usecs", CMDL_S32, &coal_rx_usec_wanted,
 		  &ecoal.rx_coalesce_usecs },
-		{ "rx-frames", CMDL_S32, &coal_rx_frames_wanted,
+		{ "DTXMXSZRQ", CMDL_S32, &coal_rx_frames_wanted,
 		  &ecoal.rx_max_coalesced_frames },
-		{ "rx-usecs-irq", CMDL_S32, &coal_rx_usec_irq_wanted,
+		{ "WTHRESH", CMDL_S32, &coal_rx_usec_irq_wanted,
 		  &ecoal.rx_coalesce_usecs_irq },
-		{ "rx-frames-irq", CMDL_S32, &coal_rx_frames_irq_wanted,
+		{ "HTHRESH", CMDL_S32, &coal_rx_frames_irq_wanted,
 		  &ecoal.rx_max_coalesced_frames_irq },
-		{ "tx-usecs", CMDL_S32, &coal_tx_usec_wanted,
+		{ "PTHRESH", CMDL_S32, &coal_tx_usec_wanted,
 		  &ecoal.tx_coalesce_usecs },
-		{ "tx-frames", CMDL_S32, &coal_tx_frames_wanted,
+		{ "BSIZEPACKET", CMDL_S32, &coal_tx_frames_wanted,
 		  &ecoal.tx_max_coalesced_frames },
-		{ "tx-usecs-irq", CMDL_S32, &coal_tx_usec_irq_wanted,
+		{ "BSIZEHEADER", CMDL_S32, &coal_tx_usec_irq_wanted,
 		  &ecoal.tx_coalesce_usecs_irq },
-		{ "tx-frames-irq", CMDL_S32, &coal_tx_frames_irq_wanted,
+		{ "MAXDESC", CMDL_S32, &coal_tx_frames_irq_wanted,
 		  &ecoal.tx_max_coalesced_frames_irq },
-		{ "rx-usecs-low", CMDL_S32, &coal_rx_usec_low_wanted,
+		{ "RSCDELAY", CMDL_S32, &coal_rx_usec_low_wanted,
 		  &ecoal.rx_coalesce_usecs_low },
 		{ "rx-frames-low", CMDL_S32, &coal_rx_frames_low_wanted,
 		  &ecoal.rx_max_coalesced_frames_low },
