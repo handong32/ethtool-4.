@@ -1182,7 +1182,7 @@ static int dump_coalesce(const struct ethtool_coalesce *ecoal)
 		"RSCDELAY: %u\n"
 		"\n"
 		"DUMP_DYNAMIC_ITR: %u\n"
-		"na2: %u\n"
+		"DCA: %u\n"
 		"na3: %u\n"
 		"na4: %u\n"
 		"na5: %u\n"
@@ -1940,7 +1940,7 @@ static int do_scoalesce(struct cmd_context *ctx)
 		  &ecoal.rx_coalesce_usecs_low },
 		{ "DUMP_DYNAMIC_ITR", CMDL_S32, &coal_rx_frames_low_wanted,
 		  &ecoal.rx_max_coalesced_frames_low },
-		{ "tx-usecs-low", CMDL_S32, &coal_tx_usec_low_wanted,
+		{ "DCA", CMDL_S32, &coal_tx_usec_low_wanted,
 		  &ecoal.tx_coalesce_usecs_low },
 		{ "tx-frames-low", CMDL_S32, &coal_tx_frames_low_wanted,
 		  &ecoal.tx_max_coalesced_frames_low },
